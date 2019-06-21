@@ -1175,7 +1175,7 @@ require([
                                     "<div><b>SPARROW Estimated TP Load " +
                                     chartUnits +
                                     ": </b>" +
-                                    responseObj.feature.attributes.PLOAD_TOTA +
+                                    responseObj.feature.attributes.PREDICT +
                                     "</div><br>"
                             );
 
@@ -1212,7 +1212,7 @@ require([
                                     "<div><b>SPARROW Estimated TN Load " +
                                     chartUnits +
                                     ": </b>" +
-                                    responseObj.feature.attributes.PLOAD_TOTA +
+                                    responseObj.feature.attributes.PREDICT +
                                     "</div><br>"
                             );
 
@@ -1245,7 +1245,7 @@ require([
                                 "</div><br>" +
                                 "<div><b>SPARROW Estimated Average Streamflow (cfs): " +
                                 "</b>" +
-                                responseObj.feature.attributes.PLOAD_TOTA +
+                                responseObj.feature.attributes.PREDICT +
                                 "</div><br>"
                             );
 
@@ -1272,21 +1272,13 @@ require([
                                 "<div><b>SPARROW Reach ID: </b>" +
                                 responseObj.feature.attributes.COMID +
                                 "</div><br>" +
-                                "<div><b>Constituent (SSC or TSS): </b>" +
-                                responseObj.feature.attributes.CONSTITUEN +
+                                "<div><b>Average Measured Load (Mt): </b>" +
+                                responseObj.feature.attributes.ACTUAL +
                                 "</div><br>" +
-                                "<div><b>Beale or Fluxmaster Estimated SSC or TSS Load (MT/yr): " +
+                                "<div><b>SPARROW Estimated Averate Load (Mt): " +
                                 "</b>" +
-                                responseObj.feature.attributes.ACTUAL_MT +
-                                "</div><br>" +
-                                "<div><b>SPARROW Estimated Factor for converting TSS to SSC: " +
-                                "</b>" +
-                                responseObj.feature.attributes.TSS_CONV +
-                                "</div><br>" +
-                                "<div><b>SPARROW Estimated SSC Load (MT/yr): " +
-                                "</b>" +
-                                responseObj.feature.attributes.PLOAD_MT +
-                                "</div><br>"
+                                responseObj.feature.attributes.PREDICT +
+                                "</div><br>" 
                             );
 
                             var graphic = new Graphic();
