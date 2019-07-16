@@ -923,7 +923,7 @@ function getExtraOutfields(outfieldsArr, sparrowLayerId) {
         case 32:
             //Catchments w/ state divisions
             finalChartArr.push("STCAT_KM2");
-            finalChartArr.push("STCAT_FRAC"); // TODO IMPORTTANT: HAVE COOPERATOR CHECK THIS FIELD NAME
+            finalChartArr.push("INCAREAKM2"); // TODO IMPORTTANT: HAVE COOPERATOR CHECK THIS FIELD NAME
             finalChartArr.push("ST_COMID");
             break;
         case 6:
