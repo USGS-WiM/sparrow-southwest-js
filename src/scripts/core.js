@@ -1272,10 +1272,10 @@ require([
                                 "<div><b>SPARROW Reach ID: </b>" +
                                 responseObj.feature.attributes.COMID +
                                 "</div><br>" +
-                                "<div><b>Average Measured Load (Mt): </b>" +
+                                "<div><b>Average Measured Load (MT/yr): </b>" +
                                 responseObj.feature.attributes.ACTUAL +
                                 "</div><br>" +
-                                "<div><b>SPARROW Estimated Averate Load (Mt): " +
+                                "<div><b>SPARROW Estimated Averate Load (MT/yr): " +
                                 "</b>" +
                                 responseObj.feature.attributes.PREDICT +
                                 "</div><br>" 
