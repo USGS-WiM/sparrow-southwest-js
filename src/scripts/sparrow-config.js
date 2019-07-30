@@ -112,10 +112,10 @@ var catchmentDefinitions_q = {
     comid: "SPARROW Reach ID ",
     st_comid: "SPARROW Reach ID by State",
     pname: "Catchment Name",
-    accl: "Accumulated streamflow (cfs)",
-    incl: "Incremental streamflow (cfs)",
-    accy: "Accumulated yield (mm/yr)",
-    incy: "Incremental yield (mm/yr)",
+    accl: "Streamflow, accumulated flow (cfs)",
+    incl: "Streamflow, incremental flow (cfs)",
+    accy: "Streamflow, accumulated yield (mm/yr)",
+    incy: "Streamflow, incremental yield (mm/yr)  ",
     daccl: "Delivered accumulated streamflow (cfs)",
     daccy: "Delivered accumulated yield (mm/yr)",
     dincl: "Delivered incremental streamflow (cfs)",
@@ -341,7 +341,7 @@ var Group1 = [
     {
         field: "GP1_AY",
         name: mappedDefinitions.ay,
-        chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "day", "gp1")
+        chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "ay", "gp1")
     },
     {
         field: "GP1_DAY",

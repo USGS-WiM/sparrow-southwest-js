@@ -182,9 +182,9 @@
 
                             <p class="p-meta p-light fullwidth">
                                 <b>Documentation of the SPARROW models for the Southwest Region of the United States </b>
-                                <br/> Robertson, D.M., and Saad, D.A., in review, Spatially explicit models of streamflow, and total nitrogen, total
-                                phosphorus, and suspended sediment transport in streams of the midwestern United States: U.S Geological Survey
-                                Scientific Investigations Report.
+                                <br/> Wise, D., Anning, D.W., and Miller, O.L., in review, Spatially referenced models of streamflow, and nitrogen,
+                                phosphorus, and suspended sediment load in streams of the southwestern United States: U.S Geological Survey Scientific
+                                Investigations Report.
                                 
                                <!--<a href="http://pubs.usgs.gov/sir/2013/5102/" target="_blank">http://pubs.usgs.gov/sir/2013/5102/</a>-->
                                <!-- <b>Documentation of the SPARROW model</b>
@@ -216,36 +216,34 @@
                                 <b>The relationship between the scale of reporting of model results and uncertainty:</b>
                                 <br/>Model results can be displayed at several watershed scales. The smallest scale that can be used for reporting is the
                                 catchment scale at which model computations are made. For the Southwest models these are NHD catchments with typical
-                                watershed size of about 2.5 square kilometers. Results can be aggregated up to larger scales for reporting: tributary
-                                outlet, HUC8 (typical watershed size is 3,700 square kilometers), state, or selected watersheds within the modeled area.
-                                The SPARROW model is, in theory, scale independent. However, the uncertainty associated with SPARROW predictions is
-                                expected to increase for drainage basin sizes smaller than those of stream monitoring sites used to calibrate the model.
-                                For the Southwest streamflow model, the drainage areas of the smallest calibration sites are typically in the range of 5
-                                to 50 square kilometers. For the TN, TP and Suspended Sediment models, the drainage areas of the smallest calibration
-                                sites are typically in the range of 10 to 100 square kilometers.
+                                watershed size of about 5 square kilometers. Results can be aggregated up to larger scales for reporting: HUC8, HUC4,
+                                HUC2, or state within the modeled area. The SPARROW model is, in theory, scale independent. However, the uncertainty
+                                associated with SPARROW predictions is expected to increase for drainage basin sizes smaller than those of stream
+                                monitoring sites used to calibrate the model. For the Southwest streamflow model, the drainage areas of the smallest
+                                calibration sites are typically in the range of 0.001 to 2 square kilometers. For the TN, TP and Suspended Sediment
+                                models, the drainage areas of the smallest calibration sites are typically in the range of TN 0.01 to 15 square
+                                kilometers.
                             </p>
                             <br/>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="contactTabPane"><br/>
 
-                            <h4 style="margin: 0; padding: 0;">Dale M. Robertson</h4>
+                            <h4 style="margin: 0; padding: 0;">Olivia L. Miller</h4>
                             <p class="p-light fullwidth">
-                                <b>Research Hydrologist</b>
-                                <br/> 608-821-3867
-                                <br/> U.S. Geological Survey  
-                                <br/><a href="mailto:dzrobert@usgs.gov">dzrobert@usgs.gov</a>
-                                <br/>
-                                <a href="https://www.usgs.gov/staff-profiles/dale-m-robertson" target="blank">https://www.usgs.gov/staff-profiles/dale-m-robertson</a>
+                                <b>Hydrologist</b>
+                                <br/>U.S. Geological Survey
+                                <br/>801-908-5007
+                                <br/><a href="mailto:omiller@usgs.gov">omiller@usgs.gov</a>
                             </p>
 
                             <hr/>
 
-                            <h4 style="margin: 0; padding: 0;">David A. Saad</h4>
+                            <h4 style="margin: 0; padding: 0;">Daniel Wise</h4>
                             <p class="p-light fullwidth">
                                 <b>Hydrologist</b>
                                 <br/>U.S. Geological Survey 
-                                <br/> 608-821-3865
-                            <br/><a href="mailto:dasaad@usgs.gov">dasaad@usgs.gov</a>
+                                <br/> 503-251-3213
+                            <br/><a href="mailto:dawise@usgs.gov">dawise@usgs.gov</a>
                                 <br/>
 
                             </p>
@@ -256,20 +254,24 @@
                             </br>
 
                             <p class="p-meta p-light fullwidth">
-                                <b>Incremental Load</b><br/> The predicted mean flow (cubic feet per second) or mean annual load of the constituent (kilograms or metric tons per
-                                year) leaving a stream reach that reflects only those sources contributed from within the incremental drainage area of
-                                that reach. The incremental value includes the effects of in-stream attenuation processes associated with one half of
+                                <b>Incremental Load</b><br/> The predicted mean daily flow (cubic feet per second) or mean annual load of the constituent (kilograms or metric tons
+                                per year) leaving a stream reach that reflects only those sources contributed from within the incremental drainage area
+                                of that reach. The incremental value includes the effects of in-stream attenuation processes associated with one half of
                                 the incremental reach length. Incremental drainage areas are represented here as “catchments”.
                             </p>
                             <p class="p-meta p-light fullwidth">
-                                <b>Accumulated Load</b><br/> The predicted mean flow (cubic feet per second) or mean annual load of the constituent (kilograms or metric tons per
-                                year) leaving a stream reach that reflects the accumulated mass of the constituent contributed by all sources in the
+                                <b>Accumulated Load</b><br/> The predicted mean daily flow (cubic feet per second) or mean annual load of the constituent (kilograms or metric tons
+                                per year) leaving a stream reach that reflects the accumulated mass of the constituent contributed by all sources in the
                                 total drainage area upstream of the reach outlet. The accumulated value includes the effects of in-stream attenuation
                                 processes in all upstream reaches.
                             </p>
                             <p class="p-meta p-light fullwidth">
-                                <b>Aggregated Load</b><br/> For results grouped by 8-digit HUC, tributary outlet, major drainage area or state, aggregated load represents the sum
-                                of incremental loads for those selected areas.
+                                <b>Concentration</b><br /> Concentration is based on accumulated load values. It is computed as mean annual load of the constituent divided by the
+                                predicted mean daily flow. Units are milligrams per liter.
+                            </p>
+                            <p class="p-meta p-light fullwidth">
+                                <b>Aggregated Load</b><br/> For results grouped by 2-digit HUC, 4-digit HUC, 8-digit HUC, or state, aggregated load represents the sum of
+                                incremental loads for those selected areas.
                             </p>
                             <p class="p-meta p-light fullwidth">
                                 <b>Incremental Yield</b><br/> The Incremental Load divided by the incremental drainage area of the reach. Units are millimeters per year, kilograms
@@ -289,11 +291,12 @@
                                 <b>Delivered Incremental Load</b><br/> Incremental load multiplied by the delivery fraction. Delivery fraction is defined below.
                             </p>
                             <p class="p-meta p-light fullwidth">
-                                <b>Delivered Accumulated Load</b><br/> Accumulated load multiplied by the delivery fraction. Delivery fraction is defined below.
+                                <b>Delivered Accumulated Load</b><br/>Accumulated load multiplied by the delivery fraction. Delivery fraction is defined below.
                             </p>
                             <p class="p-meta p-light fullwidth">
-                                <b>Delivered Aggregated Load</b><br/> For results grouped by 8-digit HUC, tributary outlet, major drainage area or state, delivered aggregated load represents
-                                the sum of delivered incremental loads for those selected areas. Delivery fraction is defined below.
+                                <b>Delivered Aggregated Load</b><br/> For results grouped by 2-digit HUC, 4-digit HUC, 8-digit HUC, or state, delivered aggregated load represents the sum of
+                                delivered incremental loads for those selected areas. Delivery fraction is defined below.
+
                             </p>
                             <p class="p-meta p-light fullwidth">
                                 <b>Delivered Incremental Yield</b><br/> The Delivered Incremental Load divided by the incremental drainage area of the reach. Units are millimeters per year,
@@ -311,13 +314,13 @@
                             </p>
                             <p class="p-meta p-light fullwidth">
 
-                                <b>Delivery Fraction (definition)</b><br/> TThe fraction of the flow or load leaving a reach that is not attenuated or removed by natural processes during
+                                <b>Delivery Fraction (definition)</b><br/> The fraction of the flow or load leaving a reach that is not attenuated or removed by natural processes during
                                 downstream transport to a specified downstream target reach. A delivery fraction of 1 indicates that 100 percent of the
                                 flow or load leaving the reach is delivered to the downstream target.
                                
 
-                                <br/> For delivered results shown here, the downstream targets represent the Gulf of Mexico, Great Lakes or stream outlets at
-                                the US/Canada border.
+                                <br/> For delivered results shown here, the downstream targets represent the Gulf of Mexico, Pacific Ocean or stream outlets
+                                at the US/Mexico border.
                             </p>
 
                         </div>
