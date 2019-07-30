@@ -845,10 +845,10 @@ function getLegendLabels(sparrowLayerId) {
             return "Total Nitrogen";
         }
         if (sparrowLayerId >= 18 && sparrowLayerId <= 26) {
-            return "Total Streamflow";
+            return "Streamflow";
         }
         if (sparrowLayerId > 26) {
-            return "Total Suspended Sediment";
+            return "Suspended Sediment";
         }
     }
     var nutrientModel = setModel(sparrowLayerId);
@@ -857,7 +857,7 @@ function getLegendLabels(sparrowLayerId) {
           label = item.name;
       }
     });
-    if (app.chosenSource) {label += ' ' + app.chosenSource.label}
+    if (app.chosenSource) {label += ' from ' + app.chosenSource.label}
     return nutrientModel + ", " + label;
 } //END getLegendLabels()
 

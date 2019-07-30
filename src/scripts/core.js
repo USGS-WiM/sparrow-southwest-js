@@ -1272,10 +1272,10 @@ require([
                                 "<div><b>SPARROW Reach ID: </b>" +
                                 responseObj.feature.attributes.COMID +
                                 "</div><br>" +
-                                "<div><b>Average Measured Load (Mt): </b>" +
+                                "<div><b>Average Measured Load (MT/yr): </b>" +
                                 Math.round(responseObj.feature.attributes.ACTUAL) +
                                 "</div><br>" +
-                                "<div><b>SPARROW Estimated Averate Load (Mt): " +
+                                "<div><b>SPARROW Estimated Averate Load (MT/yr): " +
                                 "</b>" +
                                 Math.round(responseObj.feature.attributes.PREDICT) +
                                 "</div><br>" 
@@ -1956,10 +1956,10 @@ require([
             $("#chartWindowPanelTitle").text("Total Nitrogen " + labelySelect());
         } 
         if ($('.radio input[type="radio"]:checked')[0].id == "radio3") {
-            $("#chartWindowPanelTitle").text("Total Streamflow " + labelySelect());
+            $("#chartWindowPanelTitle").text("Streamflow " + labelySelect());
         }
         if ($('.radio input[type="radio"]:checked')[0].id == "radio4") {
-            $("#chartWindowPanelTitle").text("Total Suspended Sediment " + labelySelect());
+            $("#chartWindowPanelTitle").text("Suspended Sediment " + labelySelect());
         }
 
         if (response.features.length <= 1 || app.customChartClicked) {
