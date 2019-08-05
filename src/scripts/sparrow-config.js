@@ -112,13 +112,13 @@ var catchmentDefinitions_q = {
     comid: "SPARROW Reach ID ",
     st_comid: "SPARROW Reach ID by State",
     pname: "Catchment Name",
-    accl: "Streamflow, accumulated flow (cfs)",
-    incl: "Streamflow, incremental flow (cfs)",
-    accy: "Streamflow, accumulated yield (mm/yr)",
-    incy: "Streamflow, incremental yield (mm/yr)  ",
-    daccl: "Delivered accumulated streamflow (cfs)",
+    accl: "Accumulated flow (cfs)",
+    incl: "Incremental flow (cfs)",
+    accy: "Accumulated yield (mm/yr)",
+    incy: "Incremental yield (mm/yr)",
+    daccl: "Delivered accumulated flow (cfs)",
     daccy: "Delivered accumulated yield (mm/yr)",
-    dincl: "Delivered incremental streamflow (cfs)",
+    dincl: "Delivered incremental flow (cfs)",
     dincy: "Delivered incremental yield (mm/yr)"
 };
 
@@ -146,10 +146,10 @@ var mappedDefinitions = {
 
 var mappedDefinitions_q = {
     area: "Aggregated area (km2)",
-    al: "Aggregated streamflow (cfs)",
-    ay: "Aggregated yield (mm/yr)",
-    dal: "Delivered aggregated streamflow (cfs)",
-    day: "Delivered aggregated yield (mm/yr)"
+    al: "Accumulated flow (cfs)",
+    ay: "Accumulated yield (mm/yr)",
+    dal: "Delivered accumulated flow (cfs)",
+    day: "Delivered accumulated yield (mm/yr)"
 };
 
 var mappedDefinitions_ss = {
