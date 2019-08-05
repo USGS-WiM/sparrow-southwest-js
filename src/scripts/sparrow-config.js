@@ -22,8 +22,8 @@ var mapCenter = [-107.0, 35.6];
 //app.defaultMapCenter = [-87, 42];
 defaultZoomLevel = 5;
 
-borderThreshold = 10; //dynamic polygon border threshold.  When zoomed beyond this number borders appear
-var dynamicBorderLayers = ["Catchment", "8-Digit hydrologic unit code", "4-Digit hydrologic unit code"]; //Aggregate layer choices placed in this array will have dynamic borders.  Each string MUST MATCH the text in the Group Results By Select to work.
+borderThreshold = 7; //dynamic polygon border threshold.  When zoomed beyond this number borders appear
+var dynamicBorderLayers = ["Catchment", "8-Digit hydrologic unit code"]; //Aggregate layer choices placed in this array will have dynamic borders.  Each string MUST MATCH the text in the Group Results By Select to work.
 
 var initQueryParams = ["ST", "GP3", "GP2", "GP1"]; //used to query for the AOI dropdown values on app init.
 
