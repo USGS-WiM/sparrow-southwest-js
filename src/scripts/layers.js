@@ -36,7 +36,7 @@ require([
                     visibleLayers: [sparrowOverlay],
                     options: {
                         id: "SparrowRanking",
-                        opacity: 0.75,
+                        opacity: 0.9,
                         visible: true,
                         layerDrawingOptions: layerOptions
                     },
