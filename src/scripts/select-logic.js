@@ -1094,32 +1094,32 @@ function generateRenderer() {
         //different ramps for phos/nitro
         if ($(".radio input[type='radio']:checked")[0].id == "radio1") {
             //phos brown schema
-            colorRamp.fromColor = new Color.fromHex((!isNaN(colorIndex) ? phosColors[colorIndex] : "#FFF1DC"));
-            colorRamp.toColor = new Color.fromHex((!isNaN(colorIndex) ? phosToColors[colorIndex] : "#632E0E"));
+            colorRamp.fromColor = new Color.fromHex((!isNaN(colorIndex) ? phosToColors[colorIndex] : "#FFF1DC"));
+            colorRamp.toColor = new Color.fromHex((!isNaN(colorIndex) ? phosColors[colorIndex] : "#632E0E"));
         }
         if ($(".radio input[type='radio']:checked")[0].id == "radio2") {
             //nitro green schema
-            colorRamp.fromColor = new Color.fromHex((!isNaN(colorIndex) ? nitroColors[colorIndex] : "#F5EBB8"));
-            colorRamp.toColor = new Color.fromHex((!isNaN(colorIndex) ? nitroToColors[colorIndex] : "#004120"))
+            colorRamp.fromColor = new Color.fromHex((!isNaN(colorIndex) ? nitroToColors[colorIndex] : "#F5EBB8"));
+            colorRamp.toColor = new Color.fromHex((!isNaN(colorIndex) ? nitroColors[colorIndex] : "#004120"))
         }
         if ($(".radio input[type='radio']:checked")[0].id == "radio3") {
             //nitro green schema
-            colorRamp.fromColor = new Color.fromHex((!isNaN(colorIndex) ? streamflowColors[colorIndex] : "#ABCEEA"));
-            colorRamp.toColor = new Color.fromHex((!isNaN(colorIndex) ? streamflowToColors[colorIndex] : "#00305"));
+            colorRamp.fromColor = new Color.fromHex((!isNaN(colorIndex) ? streamflowToColors[colorIndex] : "#ABCEEA"));
+            colorRamp.toColor = new Color.fromHex((!isNaN(colorIndex) ? streamflowColors[colorIndex] : "#00305"));
         }
         if ($(".radio input[type='radio']:checked")[0].id == "radio4"){
             //sediment color ramp
-            colorRamp.fromColor = new Color.fromHex((!isNaN(colorIndex) ? sedimentColors[colorIndex] : "#FFE5B4"));
-            colorRamp.toColor = new Color.fromHex((!isNaN(colorIndex) ? sedimentToColors[colorIndex] : "#B24903"));
+            colorRamp.fromColor = new Color.fromHex((!isNaN(colorIndex) ? sedimentToColors[colorIndex] : "#FFE5B4"));
+            colorRamp.toColor = new Color.fromHex((!isNaN(colorIndex) ? sedimentColors[colorIndex] : "#B24903"));
         }
 
         // make sure the lighter colors are the from colors
         var toColor = colorRamp.toColor;
         var fromColor = colorRamp.fromColor;
-        if (!isNaN(colorIndex) && toColor.r > fromColor.r) {
+       /*  if (!isNaN(colorIndex) && toColor.r > fromColor.r) {
           colorRamp.toColor = fromColor;
           colorRamp.fromColor = toColor;
-        }
+        } */
 
         colorRamp.algorithm = "hsv"; // options are:  "cie-lab", "hsv", "lab-lch"
         classDef.colorRamp = colorRamp;
