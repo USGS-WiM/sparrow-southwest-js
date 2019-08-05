@@ -205,10 +205,10 @@ var sedimentSourceDefinitions = {
       **ToColors arrays. The code will order it from light --> dark, so don't worry about that.
 **/
 var phosColors = ["#FFCCFF", "#BF0000", "#FFEC99", "#663100", "#A2EB85", "#f58833", "#BB8FCE"];
-var phosToColors = ["#999999", "#999999", "#999999", "#999999", "#999999", "#999999", "#999999"];
+var phosToColors = ["#00999999", "#00999999", "#00999999", "#00999999", "#00999999", "#00999999", "#00999999"];
 
 var nitroColors = ["#FFCCFF", "#cf0000", "#FFEC99", "#663100", "#c9daf8", "#BB8FCE"];
-var nitroToColors = ["#999999", "#999999", "#999999", "#999999", "#999999", "#999999"];
+var nitroToColors = ["#00999999", "#00999999", "#00999999", "#00999999", "#00999999", "#00999999"];
 
 var streamflowColors = ["#2980b9", "#2ECC71", "#BF0000", "#BB8FCE"];
 var streamflowToColors = ["#999999", "#999999", "#999999", "#999999"];
