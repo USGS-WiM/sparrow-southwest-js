@@ -204,6 +204,8 @@ var sedimentSourceDefinitions = {
     3. find coordinating colors (using some sort of gradient generator) and add to the 
       **ToColors arrays. The code will order it from light --> dark, so don't worry about that.
 **/
+var fromSourceColor = "#FFFFFF";
+var toSourceColor = "#000000";
 var phosColors = ["#FFCCFF", "#BF0000", "#FFEC99", "#663100", "#A2EB85", "#f58833", "#BB8FCE"];
 var phosToColors = ["#00999999", "#00999999", "#00999999", "#00999999", "#00999999", "#00999999", "#00999999"];
 
