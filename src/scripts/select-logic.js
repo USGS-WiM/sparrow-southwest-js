@@ -1095,9 +1095,9 @@ function generateRenderer() {
         if ($(".radio input[type='radio']:checked")[0].id == "radio1") {
             //phos brown schema
             //colorRamp.fromColor = new Color.fromHex((!isNaN(colorIndex) ? phosToColors[colorIndex] : "#FFF1DC")); //original light
-            colorRamp.fromColor = new Color.fromHex((!isNaN(colorIndex) ? phosToColors[colorIndex] : "#FFF6E8")); //lighter, increases contrast
+            colorRamp.fromColor = new Color.fromHex((!isNaN(colorIndex) ? fromSourceColor : "#FFF6E8")); //lighter, increases contrast
             //colorRamp.toColor = new Color.fromHex((!isNaN(colorIndex) ? phosColors[colorIndex] : "#632E0E")); //original dark
-            colorRamp.toColor = new Color.fromHex((!isNaN(colorIndex) ? phosColors[colorIndex] : "#3F1700")); //darker, increases contrast
+            colorRamp.toColor = new Color.fromHex((!isNaN(colorIndex) ? toSourceColor : "#3F1700")); //darker, increases contrast
         }
         if ($(".radio input[type='radio']:checked")[0].id == "radio2") {
             //nitro green schema
