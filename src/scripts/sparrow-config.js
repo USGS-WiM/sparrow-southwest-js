@@ -37,15 +37,15 @@ var groupResultsLabels = {
 };
 
 //download locations
-/* var rootURL = "https://test.wim.usgs.gov/SparrowSoutheast/downloads/";
-var phosphorusShapefileURL = rootURL + "southeast_shapefiles_phosphorus.zip";
-var streamflowShapefileURL = rootURL + "southeast_shapefiles_streamflow.zip";
-var sedimentShapefileURL = rootURL + "southeast_shapefiles_sediment.zip";
-var nitrogenShapefileURL = rootURL + "southeast_shapefiles_nitrogen.zip";
-var phosCalibrationURL = rootURL + "southeast_calibration_sites_tp.zip";
-var nitroCalibrationURL = rootURL + "southeast_calibration_sites_tn.zip";
-var streamflowCalibrationURL = rootURL + "southeast_calibration_sites_q.zip";
-var sedimentCalibrationURL = rootURL + "southeast_calibration_sites_ss.zip"; */
+var rootURL = "https://sparrow.wim.usgs.gov/southwest/downloads/";
+var phosphorusShapefileURL = rootURL + "southwest_cats_results_tp.zip";
+var streamflowShapefileURL = rootURL + "southwest_cats_results_q.zip";
+var sedimentShapefileURL = rootURL + "southwest_cats_results_tp_ss.zip";
+var nitrogenShapefileURL = rootURL + "southwest_cats_results_tn.zip";
+var phosCalibrationURL = rootURL + "southwest_calibration_sites_tp.zip";
+var nitroCalibrationURL = rootURL + "southwest_calibration_sites_tn.zip";
+var streamflowCalibrationURL = rootURL + "southwest_calibration_sites_q.zip";
+var sedimentCalibrationURL = rootURL + "southwest_calibration_sites_ss.zip"; 
 
 var tableOutFields = [
     { field: "FID", name: "Unique Feature Id" },
@@ -146,10 +146,10 @@ var mappedDefinitions = {
 
 var mappedDefinitions_q = {
     area: "Aggregated area (km2)",
-    al: "Accumulated flow (cfs)",
-    ay: "Accumulated yield (mm/yr)",
-    dal: "Delivered accumulated flow (cfs)",
-    day: "Delivered accumulated yield (mm/yr)"
+    al: "Aggregated flow (cfs)",
+    ay: "Aggregated yield (mm/yr)",
+    dal: "Delivered aggregated flow (cfs)",
+    day: "Delivered aggregated yield (mm/yr)"
 };
 
 var mappedDefinitions_ss = {
@@ -201,22 +201,16 @@ var sedimentSourceDefinitions = {
 /**get the HEX values below from project Google Doc and make sure:  
     1. each color corresponds with the order of SourceDefinitions objects above  
     2. there the number of hex colors matches the number of nutrient sources
-    3. find coordinating colors (using some sort of gradient generator) and add to the 
-      **ToColors arrays. The code will order it from light --> dark, so don't worry about that.
 **/
+
+//used for individual sources grayscale color blocks
 var fromSourceColor = "#FFFFFF";
 var toSourceColor = "#000000";
+
 var phosColors = ["#FFCCFF", "#BF0000", "#FFEC99", "#663100", "#A2EB85", "#f58833", "#BB8FCE"];
-var phosToColors = ["#00999999", "#00999999", "#00999999", "#00999999", "#00999999", "#00999999", "#00999999"];
-
 var nitroColors = ["#FFCCFF", "#cf0000", "#FFEC99", "#663100", "#c9daf8", "#BB8FCE"];
-var nitroToColors = ["#00999999", "#00999999", "#00999999", "#00999999", "#00999999", "#00999999"];
-
 var streamflowColors = ["#2980b9", "#2ECC71", "#BF0000", "#BB8FCE"];
-var streamflowToColors = ["#999999", "#999999", "#999999", "#999999"];
-
 var sedimentColors = ["#FFCCFF", "#d6ad00", "#a2eb85", "#08612e", "#ffd966", "#f58833"]
-var sedimentToColors = ["#999999", "#999999", "#999999", "#999999", "#999999", "#999999"];
 
 function getFields(sourceDefObj, mappedDefObj, definitionCode, group) {
     var fieldsArr = [];
@@ -285,16 +279,6 @@ var Catchments = [
 
 var Group3 = [
     {
-        field: "GP3_AL",
-        name: mappedDefinitions.al,
-        chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "al", "gp3")
-    },
-    {
-        field: "GP3_DAL",
-        name: mappedDefinitions.dal,
-        chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "dal", "gp3")
-    },
-    {
         field: "GP3_AY",
         name: mappedDefinitions.ay,
         chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "ay", "gp3")
@@ -303,20 +287,21 @@ var Group3 = [
         field: "GP3_DAY",
         name: mappedDefinitions.day,
         chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "day", "gp3")
+    },
+    {
+        field: "GP3_AL",
+        name: mappedDefinitions.al,
+        chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "al", "gp3")
+    },
+    {
+        field: "GP3_DAL",
+        name: mappedDefinitions.dal,
+        chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "dal", "gp3")
     }
+    
 ];
 
 var Group2 = [
-    {
-        field: "GP2_AL",
-        name: mappedDefinitions.al,
-        chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "al", "gp2")
-    },
-    {
-        field: "GP2_DAL",
-        name: mappedDefinitions.dal,
-        chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "dal", "gp2")
-    },
     {
         field: "GP2_AY",
         name: mappedDefinitions.ay,
@@ -326,20 +311,21 @@ var Group2 = [
         field: "GP2_DAY",
         name: mappedDefinitions.day,
         chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "day", "gp2")
+    },
+    {
+        field: "GP2_AL",
+        name: mappedDefinitions.al,
+        chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "al", "gp2")
+    },
+    {
+        field: "GP2_DAL",
+        name: mappedDefinitions.dal,
+        chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "dal", "gp2")
     }
+    
 ];
 
 var Group1 = [
-    {
-        field: "GP1_AL",
-        name: mappedDefinitions.al,
-        chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "al", "gp1")
-    },
-    {
-        field: "GP1_DAL",
-        name: mappedDefinitions.dal,
-        chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "dal", "gp1")
-    },
     {
         field: "GP1_AY",
         name: mappedDefinitions.ay,
@@ -349,20 +335,21 @@ var Group1 = [
         field: "GP1_DAY",
         name: mappedDefinitions.day,
         chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "day", "gp1")
+    },
+    {
+        field: "GP1_AL",
+        name: mappedDefinitions.al,
+        chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "al", "gp1")
+    },
+    {
+        field: "GP1_DAL",
+        name: mappedDefinitions.dal,
+        chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "dal", "gp1")
     }
+    
 ];
 
 var ST = [
-    {
-        field: "ST_AL",
-        name: mappedDefinitions.al,
-        chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "al", "st")
-    },
-    {
-        field: "ST_DAL",
-        name: mappedDefinitions.dal,
-        chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "dal", "st")
-    },
     {
         field: "ST_AY",
         name: mappedDefinitions.ay,
@@ -372,7 +359,18 @@ var ST = [
         field: "ST_DAY",
         name: mappedDefinitions.day,
         chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "day", "st")
+    },
+    {
+        field: "ST_AL",
+        name: mappedDefinitions.al,
+        chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "al", "st")
+    },
+    {
+        field: "ST_DAL",
+        name: mappedDefinitions.dal,
+        chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "dal", "st")
     }
+    
 ];
 
 var Catchments_st = [
@@ -420,16 +418,6 @@ var Catchments_st = [
 
 var Group3_st = [
     {
-        field: "SG3_AL",
-        name: mappedDefinitions.al,
-        chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "al", "sg3")
-    },
-    {
-        field: "SG3_DAL",
-        name: mappedDefinitions.dal,
-        chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "dal", "sg3")
-    },
-    {
         field: "SG3_AY",
         name: mappedDefinitions.ay,
         chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "ay", "sg3")
@@ -438,20 +426,21 @@ var Group3_st = [
         field: "SG3_DAY",
         name: mappedDefinitions.day,
         chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "day", "sg3")
+    },
+    {
+        field: "SG3_AL",
+        name: mappedDefinitions.al,
+        chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "al", "sg3")
+    },
+    {
+        field: "SG3_DAL",
+        name: mappedDefinitions.dal,
+        chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "dal", "sg3")
     }
+    
 ];
 
 var Group2_st = [
-    {
-        field: "SG2_AL",
-        name: mappedDefinitions.al,
-        chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "al", "sg2")
-    },
-    {
-        field: "SG2_DAL",
-        name: mappedDefinitions.dal,
-        chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "dal", "sg2")
-    },
     {
         field: "SG2_AY",
         name: mappedDefinitions.ay,
@@ -461,20 +450,21 @@ var Group2_st = [
         field: "SG2_DAY",
         name: mappedDefinitions.day,
         chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "day", "sg2")
+    },
+    {
+        field: "SG2_AL",
+        name: mappedDefinitions.al,
+        chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "al", "sg2")
+    },
+    {
+        field: "SG2_DAL",
+        name: mappedDefinitions.dal,
+        chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "dal", "sg2")
     }
+    
 ];
 
 var Group1_st = [
-    {
-        field: "SG1_AL",
-        name: mappedDefinitions.al,
-        chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "al", "sg1")
-    },
-    {
-        field: "SG1_DAL",
-        name: mappedDefinitions.dal,
-        chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "dal", "sg1")
-    },
     {
         field: "SG1_AY",
         name: mappedDefinitions.ay,
@@ -484,7 +474,18 @@ var Group1_st = [
         field: "SG1_DAY",
         name: mappedDefinitions.day,
         chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "day", "sg1")
+    },
+    {
+        field: "SG1_AL",
+        name: mappedDefinitions.al,
+        chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "al", "sg1")
+    },
+    {
+        field: "SG1_DAL",
+        name: mappedDefinitions.dal,
+        chartOutfields: getFields(phosphorusSourceDefinitions, mappedDefinitions, "dal", "sg1")
     }
+    
 ];
 ////END PHOSPHORUS LAYER GROUPS______________________________________________________________________________________________________________________________
 
@@ -535,16 +536,6 @@ var Catchments_tn = [
 
 var Group3_tn = [
     {
-        field: "GP3_AL",
-        name: mappedDefinitions.al,
-        chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "al", "gp3")
-    },
-    {
-        field: "GP3_DAL",
-        name: mappedDefinitions.dal,
-        chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "dal", "gp3")
-    },
-    {
         field: "GP3_AY",
         name: mappedDefinitions.ay,
         chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "ay", "gp3")
@@ -553,20 +544,21 @@ var Group3_tn = [
         field: "GP3_DAY",
         name: mappedDefinitions.day,
         chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "day", "gp3")
+    },
+    {
+        field: "GP3_AL",
+        name: mappedDefinitions.al,
+        chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "al", "gp3")
+    },
+    {
+        field: "GP3_DAL",
+        name: mappedDefinitions.dal,
+        chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "dal", "gp3")
     }
+    
 ];
 
 var Group2_tn = [
-    {
-        field: "GP2_AL",
-        name: mappedDefinitions.al,
-        chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "al", "gp2")
-    },
-    {
-        field: "GP2_DAL",
-        name: mappedDefinitions.dal,
-        chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "dal", "gp2")
-    },
     {
         field: "GP2_AY",
         name: mappedDefinitions.ay,
@@ -576,20 +568,21 @@ var Group2_tn = [
         field: "GP2_DAY",
         name: mappedDefinitions.day,
         chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "day", "gp2")
+    },
+    {
+        field: "GP2_AL",
+        name: mappedDefinitions.al,
+        chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "al", "gp2")
+    },
+    {
+        field: "GP2_DAL",
+        name: mappedDefinitions.dal,
+        chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "dal", "gp2")
     }
+    
 ];
 
 var Group1_tn = [
-    {
-        field: "GP1_AL",
-        name: mappedDefinitions.al,
-        chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "al", "gp1")
-    },
-    {
-        field: "GP1_DAL",
-        name: mappedDefinitions.dal,
-        chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "dal", "gp1")
-    },
     {
         field: "GP1_AY",
         name: mappedDefinitions.ay,
@@ -599,20 +592,21 @@ var Group1_tn = [
         field: "GP1_DAY",
         name: mappedDefinitions.day,
         chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "day", "gp1")
+    },
+    {
+        field: "GP1_AL",
+        name: mappedDefinitions.al,
+        chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "al", "gp1")
+    },
+    {
+        field: "GP1_DAL",
+        name: mappedDefinitions.dal,
+        chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "dal", "gp1")
     }
+    
 ];
 
 var ST_tn = [
-    {
-        field: "ST_AL",
-        name: mappedDefinitions.al,
-        chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "al", "st")
-    },
-    {
-        field: "ST_DAL",
-        name: mappedDefinitions.dal,
-        chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "dal", "st")
-    },
     {
         field: "ST_AY",
         name: mappedDefinitions.ay,
@@ -622,7 +616,18 @@ var ST_tn = [
         field: "ST_DAY",
         name: mappedDefinitions.day,
         chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "day", "st")
+    },
+    {
+        field: "ST_AL",
+        name: mappedDefinitions.al,
+        chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "al", "st")
+    },
+    {
+        field: "ST_DAL",
+        name: mappedDefinitions.dal,
+        chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "dal", "st")
     }
+    
 ];
 
 var Catchments_st_tn = [
@@ -670,6 +675,16 @@ var Catchments_st_tn = [
 
 var Group3_st_tn = [
     {
+        field: "SG3_AY",
+        name: mappedDefinitions.ay,
+        chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "ay", "sg3")
+    },
+    {
+        field: "SG3_DAY",
+        name: mappedDefinitions.day,
+        chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "day", "sg3")
+    },
+    {
         field: "SG3_AL",
         name: mappedDefinitions.al,
         chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "al", "sg3")
@@ -679,19 +694,20 @@ var Group3_st_tn = [
         name: mappedDefinitions.dal,
         chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "dal", "sg3")
     },
-    {
-        field: "SG3_AY",
-        name: mappedDefinitions.ay,
-        chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "ay", "sg3")
-    },
-    {
-        field: "SG3_DAY",
-        name: mappedDefinitions.day,
-        chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "day", "sg3")
-    }
+    
 ];
 
 var Group2_st_tn = [
+    {
+        field: "SG2_AY",
+        name: mappedDefinitions.ay,
+        chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "ay", "sg2")
+    },
+    {
+        field: "SG2_DAY",
+        name: mappedDefinitions.day,
+        chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "day", "sg2")
+    },
     {
         field: "SG2_AL",
         name: mappedDefinitions.al,
@@ -702,29 +718,10 @@ var Group2_st_tn = [
         name: mappedDefinitions.dal,
         chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "dal", "sg2")
     },
-    {
-        field: "SG2_AY",
-        name: mappedDefinitions.ay,
-        chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "ay", "sg2")
-    },
-    {
-        field: "SG2_DAY",
-        name: mappedDefinitions.day,
-        chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "day", "sg2")
-    }
+    
 ];
 
 var Group1_st_tn = [
-    {
-        field: "SG1_AL",
-        name: mappedDefinitions.al,
-        chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "al", "sg1")
-    },
-    {
-        field: "SG1_DAL",
-        name: mappedDefinitions.dal,
-        chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "dal", "sg1")
-    },
     {
         field: "SG1_AY",
         name: mappedDefinitions.ay,
@@ -734,7 +731,18 @@ var Group1_st_tn = [
         field: "SG1_DAY",
         name: mappedDefinitions.day,
         chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "day", "sg1")
+    },
+    {
+        field: "SG1_AL",
+        name: mappedDefinitions.al,
+        chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "al", "sg1")
+    },
+    {
+        field: "SG1_DAL",
+        name: mappedDefinitions.dal,
+        chartOutfields: getFields(nitrogenSourceDefinitions, mappedDefinitions, "dal", "sg1")
     }
+    
 ];
 ////END NITROGEN LAYER GROUPS______________________________________________________________________________________________________________________________
 
@@ -784,16 +792,6 @@ var Catchments_q = [
 
 var Group3_q = [
     {
-        field: "GP3_AL",
-        name: mappedDefinitions_q.al,
-        chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "al", "gp3")
-    },
-    {
-        field: "GP3_DAL",
-        name: mappedDefinitions_q.dal,
-        chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "dal", "gp3")
-    },
-    {
         field: "GP3_AY",
         name: mappedDefinitions_q.ay,
         chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "ay", "gp3")
@@ -802,20 +800,21 @@ var Group3_q = [
         field: "GP3_DAY",
         name: mappedDefinitions_q.day,
         chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "day", "gp3")
+    },
+    {
+        field: "GP3_AL",
+        name: mappedDefinitions_q.al,
+        chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "al", "gp3")
+    },
+    {
+        field: "GP3_DAL",
+        name: mappedDefinitions_q.dal,
+        chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "dal", "gp3")
     }
+    
 ];
 
 var Group2_q = [
-    {
-        field: "GP2_AL",
-        name: mappedDefinitions_q.al,
-        chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "al", "gp2")
-    },
-    {
-        field: "GP2_DAL",
-        name: mappedDefinitions_q.dal,
-        chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "dal", "gp2")
-    },
     {
         field: "GP2_AY",
         name: mappedDefinitions_q.ay,
@@ -825,20 +824,21 @@ var Group2_q = [
         field: "GP2_DAY",
         name: mappedDefinitions_q.day,
         chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "day", "gp2")
+    },
+    {
+        field: "GP2_AL",
+        name: mappedDefinitions_q.al,
+        chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "al", "gp2")
+    },
+    {
+        field: "GP2_DAL",
+        name: mappedDefinitions_q.dal,
+        chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "dal", "gp2")
     }
+    
 ];
 
 var Group1_q = [
-    {
-        field: "GP1_AL",
-        name: mappedDefinitions_q.al,
-        chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "al", "gp1")
-    },
-    {
-        field: "GP1_DAL",
-        name: mappedDefinitions_q.dal,
-        chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "dal", "gp1")
-    },
     {
         field: "GP1_AY",
         name: mappedDefinitions_q.ay,
@@ -848,20 +848,21 @@ var Group1_q = [
         field: "GP1_DAY",
         name: mappedDefinitions_q.day,
         chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "day", "gp1")
+    },
+    {
+        field: "GP1_AL",
+        name: mappedDefinitions_q.al,
+        chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "al", "gp1")
+    },
+    {
+        field: "GP1_DAL",
+        name: mappedDefinitions_q.dal,
+        chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "dal", "gp1")
     }
+    
 ];
 
 var ST_q = [
-    {
-        field: "ST_AL",
-        name: mappedDefinitions_q.al,
-        chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "al", "st")
-    },
-    {
-        field: "ST_DAL",
-        name: mappedDefinitions_q.dal,
-        chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "dal", "st")
-    },
     {
         field: "ST_AY",
         name: mappedDefinitions_q.ay,
@@ -871,7 +872,18 @@ var ST_q = [
         field: "ST_DAY",
         name: mappedDefinitions_q.day,
         chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "day", "st")
+    },
+    {
+        field: "ST_AL",
+        name: mappedDefinitions_q.al,
+        chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "al", "st")
+    },
+    {
+        field: "ST_DAL",
+        name: mappedDefinitions_q.dal,
+        chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "dal", "st")
     }
+    
 ];
 
 var Catchments_st_q = [
@@ -919,16 +931,6 @@ var Catchments_st_q = [
 
 var Group3_st_q = [
     {
-        field: "SG3_AL",
-        name: mappedDefinitions_q.al,
-        chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "al", "sg3")
-    },
-    {
-        field: "SG3_DAL",
-        name: mappedDefinitions_q.dal,
-        chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "dal", "sg3")
-    },
-    {
         field: "SG3_AY",
         name: mappedDefinitions_q.ay,
         chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "ay", "sg3")
@@ -937,20 +939,21 @@ var Group3_st_q = [
         field: "SG3_DAY",
         name: mappedDefinitions_q.day,
         chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "day", "sg3")
+    },
+    {
+        field: "SG3_AL",
+        name: mappedDefinitions_q.al,
+        chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "al", "sg3")
+    },
+    {
+        field: "SG3_DAL",
+        name: mappedDefinitions_q.dal,
+        chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "dal", "sg3")
     }
+    
 ];
 
 var Group2_st_q = [
-    {
-        field: "SG2_AL",
-        name: mappedDefinitions_q.al,
-        chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "al", "sg2")
-    },
-    {
-        field: "SG2_DAL",
-        name: mappedDefinitions_q.dal,
-        chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "dal", "sg2")
-    },
     {
         field: "SG2_AY",
         name: mappedDefinitions_q.ay,
@@ -960,20 +963,21 @@ var Group2_st_q = [
         field: "SG2_DAY",
         name: mappedDefinitions_q.day,
         chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "day", "sg2")
+    },
+    {
+        field: "SG2_AL",
+        name: mappedDefinitions_q.al,
+        chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "al", "sg2")
+    },
+    {
+        field: "SG2_DAL",
+        name: mappedDefinitions_q.dal,
+        chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "dal", "sg2")
     }
+    
 ];
 
 var Group1_st_q = [
-    {
-        field: "SG1_AL",
-        name: mappedDefinitions_q.al,
-        chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "al", "sg1")
-    },
-    {
-        field: "SG1_DAL",
-        name: mappedDefinitions_q.dal,
-        chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "dal", "sg1")
-    },
     {
         field: "SG1_AY",
         name: mappedDefinitions_q.ay,
@@ -983,7 +987,18 @@ var Group1_st_q = [
         field: "SG1_DAY",
         name: mappedDefinitions_q.day,
         chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "day", "sg1")
+    },
+    {
+        field: "SG1_AL",
+        name: mappedDefinitions_q.al,
+        chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "al", "sg1")
+    },
+    {
+        field: "SG1_DAL",
+        name: mappedDefinitions_q.dal,
+        chartOutfields: getFields(streamflowSourceDefinitions, mappedDefinitions_q, "dal", "sg1")
     }
+
 ];
 ////END STREAMFLOW LAYER GROUPS______________________________________________________________________________________________________________________________
 
@@ -1033,16 +1048,6 @@ var Catchments_ss = [
 
 var Group3_ss = [
     {
-        field: "GP3_AL",
-        name: mappedDefinitions_ss.al,
-        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "al", "gp3")
-    },
-    {
-        field: "GP3_DAL",
-        name: mappedDefinitions_ss.dal,
-        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "dal", "gp3")
-    },
-    {
         field: "GP3_AY",
         name: mappedDefinitions_ss.ay,
         chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "ay", "gp3")
@@ -1051,20 +1056,21 @@ var Group3_ss = [
         field: "GP3_DAY",
         name: mappedDefinitions_ss.day,
         chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "day", "gp3")
+    },
+    {
+        field: "GP3_AL",
+        name: mappedDefinitions_ss.al,
+        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "al", "gp3")
+    },
+    {
+        field: "GP3_DAL",
+        name: mappedDefinitions_ss.dal,
+        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "dal", "gp3")
     }
+    
 ];
 
 var Group2_ss = [
-    {
-        field: "GP2_AL",
-        name: mappedDefinitions_ss.al,
-        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "al", "gp2")
-    },
-    {
-        field: "GP2_DAL",
-        name: mappedDefinitions_ss.dal,
-        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "dal", "gp2")
-    },
     {
         field: "GP2_AY",
         name: mappedDefinitions_ss.ay,
@@ -1074,10 +1080,31 @@ var Group2_ss = [
         field: "GP2_DAY",
         name: mappedDefinitions_ss.day,
         chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "day", "gp2")
+    },
+    {
+        field: "GP2_AL",
+        name: mappedDefinitions_ss.al,
+        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "al", "gp2")
+    },
+    {
+        field: "GP2_DAL",
+        name: mappedDefinitions_ss.dal,
+        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "dal", "gp2")
     }
+    
 ];
 
 var Group1_ss = [
+    {
+        field: "GP1_AY",
+        name: mappedDefinitions_ss.ay,
+        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "ay", "gp1")
+    },
+    {
+        field: "GP1_DAY",
+        name: mappedDefinitions_ss.day,
+        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "day", "gp1")
+    },
     {
         field: "GP1_AL",
         name: mappedDefinitions_ss.al,
@@ -1088,19 +1115,20 @@ var Group1_ss = [
         name: mappedDefinitions_ss.dal,
         chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "dal", "gp1")
     },
-    {
-        field: "GP1_AY",
-        name: mappedDefinitions_ss.ay,
-        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "ay", "gp1")
-    },
-    {
-        field: "GP1_DAY",
-        name: mappedDefinitions_ss.day,
-        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "day", "gp1")
-    }
+    
 ];
 
 var ST_ss = [
+    {
+        field: "ST_AY",
+        name: mappedDefinitions_ss.ay,
+        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "ay", "st")
+    },
+    {
+        field: "ST_DAY",
+        name: mappedDefinitions_ss.day,
+        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "day", "st")
+    },
     {
         field: "ST_AL",
         name: mappedDefinitions_ss.al,
@@ -1111,16 +1139,7 @@ var ST_ss = [
         name: mappedDefinitions_ss.dal,
         chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "dal", "st")
     },
-    {
-        field: "ST_AY",
-        name: mappedDefinitions_ss.ay,
-        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "ay", "st")
-    },
-    {
-        field: "ST_DAY",
-        name: mappedDefinitions_ss.day,
-        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "day", "st")
-    }
+    
 ];
 
 var Catchments_st_ss = [
@@ -1168,16 +1187,6 @@ var Catchments_st_ss = [
 
 var Group3_st_ss = [
     {
-        field: "SG3_AL",
-        name: mappedDefinitions_ss.al,
-        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "al", "sg3")
-    },
-    {
-        field: "SG3_DAL",
-        name: mappedDefinitions_ss.dal,
-        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "dal", "sg3")
-    },
-    {
         field: "SG3_AY",
         name: mappedDefinitions_ss.ay,
         chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "ay", "sg3")
@@ -1186,20 +1195,21 @@ var Group3_st_ss = [
         field: "SG3_DAY",
         name: mappedDefinitions_ss.day,
         chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "day", "sg3")
+    },
+    {
+        field: "SG3_AL",
+        name: mappedDefinitions_ss.al,
+        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "al", "sg3")
+    },
+    {
+        field: "SG3_DAL",
+        name: mappedDefinitions_ss.dal,
+        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "dal", "sg3")
     }
+    
 ];
 
 var Group2_st_ss = [
-    {
-        field: "SG2_AL",
-        name: mappedDefinitions_ss.al,
-        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "al", "sg2")
-    },
-    {
-        field: "SG2_DAL",
-        name: mappedDefinitions_ss.dal,
-        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "dal", "sg2")
-    },
     {
         field: "SG2_AY",
         name: mappedDefinitions_ss.ay,
@@ -1209,20 +1219,21 @@ var Group2_st_ss = [
         field: "SG2_DAY",
         name: mappedDefinitions_ss.day,
         chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "day", "sg2")
+    },
+    {
+        field: "SG2_AL",
+        name: mappedDefinitions_ss.al,
+        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "al", "sg2")
+    },
+    {
+        field: "SG2_DAL",
+        name: mappedDefinitions_ss.dal,
+        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "dal", "sg2")
     }
+    
 ];
 
 var Group1_st_ss = [
-    {
-        field: "SG1_AL",
-        name: mappedDefinitions_ss.al,
-        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "al", "sg1")
-    },
-    {
-        field: "SG1_DAL",
-        name: mappedDefinitions_ss.dal,
-        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "dal", "sg1")
-    },
     {
         field: "SG1_AY",
         name: mappedDefinitions_ss.ay,
@@ -1232,6 +1243,17 @@ var Group1_st_ss = [
         field: "SG1_DAY",
         name: mappedDefinitions_ss.day,
         chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "day", "sg1")
+    },
+    {
+        field: "SG1_AL",
+        name: mappedDefinitions_ss.al,
+        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "al", "sg1")
+    },
+    {
+        field: "SG1_DAL",
+        name: mappedDefinitions_ss.dal,
+        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "dal", "sg1")
     }
+    
 ];
 ////END SUSPENDED SEDIMENT LAYER GROUPS______________________________________________________________________________________________________________________________

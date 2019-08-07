@@ -1085,46 +1085,33 @@ function generateRenderer() {
             );
         }
 
-        var colorIndex = NaN;
-        if (app.chosenSource) {
-          // if source selected in sidebar, render based on that source's color in chart
-          colorIndex = app.chosenSource.attribute.split('_S')[1] - 1;
-        }
         var colorRamp = new AlgorithmicColorRamp();
         //different ramps for phos/nitro
         if ($(".radio input[type='radio']:checked")[0].id == "radio1") {
             //phos brown schema
             //colorRamp.fromColor = new Color.fromHex((!isNaN(colorIndex) ? phosToColors[colorIndex] : "#FFF1DC")); //original light
-            colorRamp.fromColor = new Color.fromHex((!isNaN(colorIndex) ? fromSourceColor : "#FFF6E8")); //lighter, increases contrast
+            colorRamp.fromColor = new Color.fromHex((app.chosenSource != undefined) ? fromSourceColor : "#FFF6E8"); //lighter, increases contrast
             //colorRamp.toColor = new Color.fromHex((!isNaN(colorIndex) ? phosColors[colorIndex] : "#632E0E")); //original dark
-            colorRamp.toColor = new Color.fromHex((!isNaN(colorIndex) ? toSourceColor : "#3F1700")); //darker, increases contrast
+            colorRamp.toColor = new Color.fromHex((app.chosenSource != undefined) ? toSourceColor : "#3F1700"); //darker, increases contrast
         }
         if ($(".radio input[type='radio']:checked")[0].id == "radio2") {
             //nitro green schema
-            colorRamp.fromColor = new Color.fromHex((!isNaN(colorIndex) ? nitroToColors[colorIndex] : "#F5EBB8"));
+            colorRamp.fromColor = new Color.fromHex((app.chosenSource != undefined) ? fromSourceColor : "#F5EBB8");
             //colorRamp.toColor = new Color.fromHex((!isNaN(colorIndex) ? nitroColors[colorIndex] : "#004120")); //original dark
-            colorRamp.toColor = new Color.fromHex((!isNaN(colorIndex) ? nitroColors[colorIndex] : "#003419")); //darker
+            colorRamp.toColor = new Color.fromHex((app.chosenSource != undefined) ? toSourceColor : "#003419"); //darker
         }
         if ($(".radio input[type='radio']:checked")[0].id == "radio3") {
             //streamflow blue schema
-            colorRamp.fromColor = new Color.fromHex((!isNaN(colorIndex) ? streamflowToColors[colorIndex] : "#cef3f5"));//new light
-            colorRamp.toColor = new Color.fromHex((!isNaN(colorIndex) ? streamflowColors[colorIndex] : "#00305"));
+            colorRamp.fromColor = new Color.fromHex((app.chosenSource != undefined) ? fromSourceColor : "#cef3f5");//new light
+            colorRamp.toColor = new Color.fromHex((app.chosenSource != undefined) ? toSourceColor : "#00305");
         }
         if ($(".radio input[type='radio']:checked")[0].id == "radio4"){
             //sediment color ramp
             //colorRamp.fromColor = new Color.fromHex((!isNaN(colorIndex) ? sedimentToColors[colorIndex] : "#FFF4e0"));//original light
-            colorRamp.fromColor = new Color.fromHex((!isNaN(colorIndex) ? sedimentToColors[colorIndex] : "#FFF6CF"));//more saturated yellow
+            colorRamp.fromColor = new Color.fromHex((app.chosenSource != undefined) ? fromSourceColor : "#FFF6CF");//more saturated yellow
             //colorRamp.toColor = new Color.fromHex((!isNaN(colorIndex) ? sedimentColors[colorIndex] : "#B24903"));//original dark
-            colorRamp.toColor = new Color.fromHex((!isNaN(colorIndex) ? sedimentColors[colorIndex] : "#A04100"));
+            colorRamp.toColor = new Color.fromHex((app.chosenSource != undefined) ? toSourceColor : "#A04100");
         }
-
-        // make sure the lighter colors are the from colors
-        /*var toColor = colorRamp.toColor;
-        var fromColor = colorRamp.fromColor;
-         if (!isNaN(colorIndex) && toColor.r > fromColor.r) {
-          colorRamp.toColor = fromColor;
-          colorRamp.fromColor = toColor;
-        } */
 
         colorRamp.algorithm = "hsv"; // options are:  "cie-lab", "hsv", "lab-lch"
         classDef.colorRamp = colorRamp;
