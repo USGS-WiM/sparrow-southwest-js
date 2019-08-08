@@ -40,7 +40,7 @@ var groupResultsLabels = {
 var rootURL = "https://sparrow.wim.usgs.gov/southwest/downloads/";
 var phosphorusShapefileURL = rootURL + "southwest_cats_results_tp.zip";
 var streamflowShapefileURL = rootURL + "southwest_cats_results_q.zip";
-var sedimentShapefileURL = rootURL + "southwest_cats_results_tp_ss.zip";
+var sedimentShapefileURL = rootURL + "southwest_cats_results_ss.zip";
 var nitrogenShapefileURL = rootURL + "southwest_cats_results_tn.zip";
 var phosCalibrationURL = rootURL + "southwest_calibration_sites_tp.zip";
 var nitroCalibrationURL = rootURL + "southwest_calibration_sites_tn.zip";
@@ -208,7 +208,7 @@ var fromSourceColor = "#FFFFFF";
 var toSourceColor = "#000000";
 
 var phosColors = ["#FFCCFF", "#BF0000", "#FFEC99", "#663100", "#A2EB85", "#f58833", "#BB8FCE"];
-var nitroColors = ["#FFCCFF", "#cf0000", "#FFEC99", "#663100", "#c9daf8", "#BB8FCE"];
+var nitroColors = ["#FFCCFF", "#BF0000", "#FFEC99", "#663100", "#c9daf8", "#BB8FCE"];
 var streamflowColors = ["#2980b9", "#2ECC71", "#BF0000", "#BB8FCE"];
 var sedimentColors = ["#FFCCFF", "#d6ad00", "#a2eb85", "#08612e", "#ffd966", "#f58833"]
 
