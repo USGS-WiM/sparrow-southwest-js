@@ -176,8 +176,12 @@
                             <br/>
 
                             <p class="p-meta p-light fullwidth">
-                                <b>SPARROW Surface Water-Quality Modeling Web Pages</b>
-                                <br/> National Website: <a href="https://water.usgs.gov/nawqa/sparrow/" target="blank">https://water.usgs.gov/nawqa/sparrow/</a>
+                                <b>Description of the 2012 SPARROW Models for the Southwest Region</b>
+                                <br /> The SPARROW model results displayed here represent mean daily streamflow and average annual total nitrogen, total
+                                phosphorus and suspended sediment load in streams of the Southwest. The simulated streamflow represents long-term
+                                average source inputs and hydrologic conditions for the period from 1999 through 2014. The simulated loads represent
+                                source inputs similar to 2012 and normalized to long-term average hydrologic conditions for the period from 1999 through
+                                2014.
                             </p>
 
                             <p class="p-meta p-light fullwidth">
@@ -185,15 +189,16 @@
                                 <br/> Wise, D., Anning, D.W., and Miller, O.L., in review, Spatially referenced models of streamflow, and nitrogen,
                                 phosphorus, and suspended sediment load in streams of the southwestern United States: U.S Geological Survey Scientific
                                 Investigations Report.
-                                
-                               <!--<a href="http://pubs.usgs.gov/sir/2013/5102/" target="_blank">http://pubs.usgs.gov/sir/2013/5102/</a>-->
-                               <!-- <b>Documentation of the SPARROW model</b>
-                                <br/> Hoos, A.B., Moore, R.B., Garcia, A.M., Noe, G.B., Terziotti, S.E., Johnston, C.M.,
-                                and Dennis, R.L., 2013, Simulating stream transport of nutrients,
-                                2002, using a spatially-referenced regression model and 1:100,000-scale hydrography: U.S.
-                                Geological Survey Scientific Investigations Report 2013-5102, 33 p.,
-                                <a href="http://pubs.usgs.gov/sir/2013/5102/" target="_blank">http://pubs.usgs.gov/sir/2013/5102/</a>.
-                                <br/>-->
+                                <br/>
+                                Miller, O.L., Wise, D.R., and Anning, D.W., 2019, SPARROW model inputs and simulated streamflow, nutrient and suspended
+                                sediment loads in streams of the Southwest Region of the United States, 2012 Base Year: U.S. Geological Survey,
+                                <a href="https://doi.org/10.5066/ P9GFLBG8">https://doi.org/10.5066/ P9GFLBG8</a>.
+                            </p>
+
+                            <p class="p-meta p-light fullwidth">
+                                <b>SPARROW Surface Water-Quality Modeling Web Pages</b>
+                                <br /> National Website: <a href="https://water.usgs.gov/nawqa/sparrow/"
+                                    target="blank">https://water.usgs.gov/nawqa/sparrow/</a>
                             </p>
 
                             <p class="p-meta p-light fullwidth">
@@ -219,11 +224,11 @@
                                 watershed size of about 5 square kilometers. Results can be aggregated up to larger scales for reporting: HUC8, HUC4,
                                 HUC2, or state within the modeled area. The SPARROW model is, in theory, scale independent. However, the uncertainty
                                 associated with SPARROW predictions is expected to increase for drainage basin sizes smaller than those of stream
-                                monitoring sites used to calibrate the model. The uncertainty associated with predictions at the catchment scale is
-                                therefore expected to be larger than the uncertainty associated with predictions at larger scales. For the Southwest
-                                streamflow model, the drainage areas of the smallest calibration sites are typically in the range of 0.001 to 2 square
-                                kilometers. For the TN, TP and Suspended Sediment models, the drainage areas of the smallest calibration sites are
-                                typically in the range of TN 0.01 to 15 square kilometers.
+                                monitoring sites used to calibrate the model. For the Southwest streamflow model, the drainage areas of the smallest
+                                calibration sites are typically in the range of 10 to 50 square kilometers. For the TN, TP and Suspended Sediment
+                                models, the drainage areas of the smallest calibration sites are typically in the range of 15 to 100 square kilometers.
+                                The uncertainty associated with incremental load and yield predictions at the catchment scale is therefore expected to
+                                be larger than the uncertainty associated with predictions at larger scales.
                             </p>
                             <br/>
                         </div>
@@ -255,48 +260,48 @@
                             </br>
 
                             <p class="p-meta p-light fullwidth">
-                                <b>Incremental Load</b><br/> The predicted mean daily flow (cubic feet per second) or mean annual load of the constituent (kilograms or metric tons
+                                <b>Incremental Flow or Incremental Load</b><br/> The predicted mean daily flow (cubic feet per second) or mean annual load of the constituent (kilograms or metric tons
                                 per year) leaving a stream reach that reflects only those sources contributed from within the incremental drainage area
                                 of that reach. The incremental value includes the effects of in-stream attenuation processes associated with one half of
                                 the incremental reach length. Incremental drainage areas are represented here as “catchments”.
                             </p>
                             <p class="p-meta p-light fullwidth">
-                                <b>Accumulated Load</b><br/> The predicted mean daily flow (cubic feet per second) or mean annual load of the constituent (kilograms or metric tons
+                                <b>Accumulated Flow or Accumulated Load</b><br/> The predicted mean daily flow (cubic feet per second) or mean annual load of the constituent (kilograms or metric tons
                                 per year) leaving a stream reach that reflects the accumulated mass of the constituent contributed by all sources in the
                                 total drainage area upstream of the reach outlet. The accumulated value includes the effects of in-stream attenuation
                                 processes in all upstream reaches.
                             </p>
                             <p class="p-meta p-light fullwidth">
-                                <b>Concentration</b><br /> Concentration is based on accumulated load values. It is computed as mean annual load of the constituent divided by the
-                                predicted mean daily flow. Units are milligrams per liter.
+                                <b>Concentration</b><br /> The Accumulated Load divided by the Accumulated Flow. This should be interpreted as the mean-annual flow-weighted
+                                concentration. Units are milligrams per liter.
                             </p>
                             <p class="p-meta p-light fullwidth">
-                                <b>Aggregated Load</b><br/> For results grouped by 2-digit HUC, 4-digit HUC, 8-digit HUC, or state, aggregated load represents the sum of
-                                incremental loads for those selected areas.
+                                <b>Aggregated Flow or Aggregated Load</b><br/> For results grouped by 8-digit HUC,4-digit HUC, 2-digit HUC, or state, aggregated flow or load represents the sum of
+                                incremental flows or loads for those selected areas.
                             </p>
                             <p class="p-meta p-light fullwidth">
-                                <b>Incremental Yield</b><br/> The Incremental Load divided by the incremental drainage area of the reach. Units are millimeters per year, kilograms
-                                per square kilometer per year or metric tons per square kilometer per year.
-                            </p>
-                            <p class="p-meta p-light fullwidth">
-                                <b>Accumulated Yield</b><br/> The Accumulated Load divided by the total drainage area upstream of the reach outlet. Units are millimeters per year,
+                                <b>Incremental Yield</b><br/> The Incremental Flow or Load divided by the incremental drainage area of the reach. Units are millimeters per year,
                                 kilograms per square kilometer per year or metric tons per square kilometer per year.
+                            </p>
+                            <p class="p-meta p-light fullwidth">
+                                <b>Accumulated Yield</b><br/> The Accumulated Flow or Load divided by the total drainage area upstream of the reach outlet. Units are millimeters per
+                                year, kilograms per square kilometer per year or metric tons per square kilometer per year.
 
                             </p>
                             <p class="p-meta p-light fullwidth">
-                                <b>Aggregated Yield</b><br/> The Aggregated Load divided by the sum of the "grouped by" incremental drainage areas. Units are millimeters per year,
-                                kilograms per square kilometer per year or metric tons per square kilometer per year.
+                                <b>Aggregated Yield</b><br/> The Aggregated Flow or Load divided by the sum of the "grouped by" incremental drainage areas. Units are millimeters per
+                                year, kilograms per square kilometer per year or metric tons per square kilometer per year.
 
                             </p>
                             <p class="p-meta p-light fullwidth">
-                                <b>Delivered Incremental Load</b><br/> Incremental load multiplied by the delivery fraction. Delivery fraction is defined below.
+                                <b>Delivered Incremental Flow or Delivered Incremental Load</b><br/>Incremental flow or load multiplied by the delivery fraction. Delivery fraction is defined below.
                             </p>
                             <p class="p-meta p-light fullwidth">
-                                <b>Delivered Accumulated Load</b><br/>Accumulated load multiplied by the delivery fraction. Delivery fraction is defined below.
+                                <b>Delivered Accumulated Flow or Delivered Accumulated Load</b><br/>Accumulated flow or load multiplied by the delivery fraction. Delivery fraction is defined below.
                             </p>
                             <p class="p-meta p-light fullwidth">
-                                <b>Delivered Aggregated Load</b><br/> For results grouped by 2-digit HUC, 4-digit HUC, 8-digit HUC, or state, delivered aggregated load represents the sum of
-                                delivered incremental loads for those selected areas. Delivery fraction is defined below.
+                                <b>Delivered Aggregated Flow or Delivered Aggregated Load</b><br/> For results grouped by 8-digit HUC,4-digit HUC, 2-digit HUC, or state, delivered aggregated flow or load represents the
+                                sum of delivered incremental flows or loads for those selected areas. Delivery fraction is defined below.
 
                             </p>
                             <p class="p-meta p-light fullwidth">
@@ -304,14 +309,14 @@
                                 kilograms per square kilometer per year or metric tons per square kilometer per year.
                             </p>
                             <p class="p-meta p-light fullwidth">
-                                <b>Delivered Accumulated Yield</b><br/> The Delivered Accumulated Load divided by the total drainage area upstream of the reach outlet or total of the "grouped
-                                by" area. Units are millimeters per year, kilograms per square kilometer per year or metric tons per square kilometer
-                                per year.
+                                <b>Delivered Accumulated Yield</b><br/> The Delivered Accumulated Flow or Load divided by the total drainage area upstream of the reach outlet or total of the
+                                "grouped by" area. Units are millimeters per year, kilograms per square kilometer per year or metric tons per square
+                                kilometer per year.
 
                             </p>
                             <p class="p-meta p-light fullwidth">
-                                <b>Delivered Aggregated Yield</b><br/> The Delivered Aggregated Load divided by the sum of the “grouped by” incremental drainage areas. Units are millimeters
-                                per year, kilograms per square kilometer per year or metric tons per square kilometer per year.
+                                <b>Delivered Aggregated Yield</b><br/> The Delivered Aggregated Flow or Load divided by the sum of the “grouped by” incremental drainage areas. Units are
+                                millimeters per year, kilograms per square kilometer per year or metric tons per square kilometer per year.
                             </p>
                             <p class="p-meta p-light fullwidth">
 
@@ -556,7 +561,7 @@
                     <div style="padding: 20px 0;">
                         <p style="max-width: none; width: 100%; text-align:center; padding:10px;">
                             Geospatial data from the links provided below contain the information needed to reproduce the maps and model results
-                            shown here and described in Wise and others, 2019 <a href="https://doi.org/XXXX)" target="_blank">https://doi.org/XXXX).
+                            shown here and described in Wise and others, 2019 <a href="https://doi.org/XXXX)" target="_blank">https://doi.org/XXXX)</a>.
                         </p>
                         <p style="max-width: none; width: 100%; text-align:center;">
                             <b style="text-align:center; margin: 0 auto; ">All Model Results</b>
