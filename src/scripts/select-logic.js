@@ -885,8 +885,8 @@ function getExtraOutfields(outfieldsArr, sparrowLayerId) {
         case 27:
             //CATCHMENTS
             //finalChartArr.push("PNAME");
-            finalChartArr.push("CUMAREAKM2");
             finalChartArr.push("INCAREAKM2");
+            finalChartArr.push("CUMAREAKM2");
             finalChartArr.push("COMID");
             break;
         case 1:
@@ -922,8 +922,8 @@ function getExtraOutfields(outfieldsArr, sparrowLayerId) {
         case 23:
         case 32:
             //Catchments w/ state divisions
-            finalChartArr.push("STCAT_KM2");
-            finalChartArr.push("INCAREAKM2"); // TODO IMPORTTANT: HAVE COOPERATOR CHECK THIS FIELD NAME
+            finalChartArr.push("INCAREAKM2");
+            finalChartArr.push("CUMAREAKM2"); 
             finalChartArr.push("ST_COMID");
             break;
         case 6:
