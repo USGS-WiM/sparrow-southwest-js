@@ -163,7 +163,7 @@ var mappedDefinitions_ss = {
 /***UPDATE IMPORTANT! complete with source data Excel key***/
 var phosphorusSourceDefinitions = {
     s1: "Urban land",
-    s2: "Municipal Wastewater Treatment Discharge",
+    s2: "Municipal wastewater treatment discharge",
     s3: "Farm fertilizer",
     s4: "Livestock manure",
     s5: "Geologic material",
@@ -174,7 +174,7 @@ var phosphorusSourceDefinitions = {
 /***UPDATE IMPORTANT! complete with source data Excel key***/
 var nitrogenSourceDefinitions = {
     s1: "Urban land",
-    s2: "Municipal Wastewater Treatment Discharge",
+    s2: "Municipal wastewater treatment discharge",
     s3: "Farm fertilizer",
     s4: "Livestock manure",
     s5: "Atmospheric deposition",
@@ -183,7 +183,7 @@ var nitrogenSourceDefinitions = {
 
 /***UPDATE IMPORTANT! complete with source data Excel key***/
 var streamflowSourceDefinitions = {
-    s1: "Precipitation minus Actual ET",
+    s1: "Precipitation minus actual ET",
     s2: "Springs",
     s3: "Wastewater treatment discharge",
     s4: "Inter - basin transfers"
