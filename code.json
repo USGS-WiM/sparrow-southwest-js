@@ -16,7 +16,7 @@
       ]
     },
 
-    "homepageURL": "https://sparrow.wim.usgs.gov/southwest/",
+    "homepageURL": null,
     "downloadURL": "https://github.com/USGS-WiM/sparrow-southwest-js/archive/master.zip",
     "disclaimerURL": "https://github.com/USGS-WiM/sparrow-southwest-js/blob/master/DISCLAIMER.md",
     "repositoryUrl": "https://github.com/USGS-WiM/sparrow-southwest-js",
