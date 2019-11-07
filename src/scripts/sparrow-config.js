@@ -37,7 +37,7 @@ var groupResultsLabels = {
 };
 
 //download locations
-var rootURL = "https://sparrow.wim.usgs.gov/southwest/downloads/";
+var rootURL = "https://sparrow.wim.usgs.gov/sparrow-southwest-2012/downloads/";
 var phosphorusShapefileURL = rootURL + "southwest_cats_results_tp.zip";
 var streamflowShapefileURL = rootURL + "southwest_cats_results_q.zip";
 var sedimentShapefileURL = rootURL + "southwest_cats_results_ss.zip";
