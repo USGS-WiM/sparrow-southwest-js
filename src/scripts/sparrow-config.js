@@ -84,6 +84,7 @@ var catchmentDefinitions = {
     st_comid: "SPARROW Reach by State",
     pname: "Catchment Name",
     accl: "Accumulated load (kg)",
+    concentrat: "Concentration, mg/L",
     incl: "Incremental load (kg)",
     accy: "Accumulated yield (kg/km2)",
     incy: "Incremental yield (kg/km2)",
