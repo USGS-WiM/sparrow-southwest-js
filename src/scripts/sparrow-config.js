@@ -10,7 +10,7 @@ var appTitle = "2012 SPARROW Models for the Southwest: Total Phosphorus, Total N
 var appVersion = "v0.9.0"; // could pull this from code/package.json
 
 var serviceBaseURL =
-    "https://sparrowtest.wim.usgs.gov/arcgis/rest/services/SparrowSouthwest/SparrowSouthwest/MapServer/"; //important! UPDATE rest service URL
+    "https://gis1.wim.usgs.gov/server/rest/services/Sparrow/SparrowSouthwest/MapServer/"; //important! UPDATE rest service URL
 var chartUnits = " (kg/yr.)";
 var chartFeatureMax = 2500; //chart will not be available if more than this many polygons are showing on map.
 
